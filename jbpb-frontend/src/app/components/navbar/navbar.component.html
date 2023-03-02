@@ -1,0 +1,18 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button class="btn" routerLink="/inicio">
+        <span class="navbar-brand mb-0 h1">App CRUD - Spring con PostgreSQL</span>
+      </button>
+
+      <li class="nav-item dropdown" style="margin-right: 80px;">
+        <a style="color: white;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Secciones
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li routerLink="/list-employees"><a class="dropdown-item">Empleados</a></li>
+          <li routerLink="/list-customers"><a class="dropdown-item">Clientes</a></li>
+        </ul>
+      </li>
+    </div>
+    
+</nav>

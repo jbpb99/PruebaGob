@@ -19,13 +19,13 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     @Override
     @Transactional(readOnly = true)
     public List<Employee> findAll() {
-        return (List<Employee>) employeeRepository.findAll();
+        return (List<Employee>) employeeRepository.getEmpleados();
     }
 
     //Get by ID
     @Override
     public Optional<Employee> findById(int id) {
-        return (Optional<Employee>) employeeRepository.findById(id);
+        return (Optional<Employee>) employeeRepository.getEmpleadoById(id);
     }
 
     //Delete

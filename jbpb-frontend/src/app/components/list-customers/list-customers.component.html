@@ -1,0 +1,41 @@
+<div class = "container mt-4">
+    <div class = "card">
+        <div class = "card-body">
+            <span class="h3">Listado de Clientes</span>
+            <button type="button" class="btn btn-dark btn-lg" style="float:right" routerLink="/createCustomer">Add Customer</button>
+              <table class="table table-striped mt-5">
+                  <thead>
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Contact Name</th>
+                      <th scope="col">Address</th>
+                      <th scope="col">City</th>
+                      <th scope="col">Country</th>
+                    </tr>
+                  </thead>
+                  
+                  <tbody>
+                    
+                    <ng-container *ngFor="let customer of customers;">
+                      <tr>
+                        
+                        <th scope="row">{{ customer.customer_id }}</th>
+                        <td>{{ customer.customerName }}</td>
+                        <td>{{ customer.contactName }}</td>
+                        <td>{{ customer.address }}</td>
+                        <td>{{ customer.city }}</td>
+                        <td>{{ customer.country }}</td>
+                        <td>
+                            <i class="fas fa-edit fa-lg text-info" style="margin-right: 2px;"></i>
+                            <i class="fas fa-trash-alt fa-lg text-danger"></i>
+                        </td>
+                      
+                      </tr>
+                    </ng-container>
+                  
+                  </tbody>
+                </table>
+        </div>
+    </div>
+</div>

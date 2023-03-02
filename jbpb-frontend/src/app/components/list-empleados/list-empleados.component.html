@@ -1,0 +1,35 @@
+<div class = "container mt-4">
+    <div class = "card">
+        <div class = "card-body">
+            <span class="h3">Listado de Empleados</span>
+            <button type="button" class="btn btn-dark btn-lg" style="float:right" routerLink="/createEmployee">Add Employee</button>
+            <table class="table table-striped mt-5">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Lastname</th>
+                    <th scope="col">Birthdate</th>
+                    <th scope="col">Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <ng-container *ngFor="let employee of employees;">
+                  <tr>
+                    <th scope="row">{{ employee.employee_id }}</th>
+                    <td>{{ employee.firstName }}</td>
+                    <td>{{ employee.lastName }}</td>
+                    <td>{{ employee.birthDate }}</td>
+                    <td>{{ employee.notes }}</td>
+                    <td>
+                        <i class="fas fa-edit fa-lg text-info" style="margin-right: 2px;"></i>
+                        <i class="fas fa-trash-alt fa-lg text-danger"></i>
+                    </td>
+                  </tr>
+                </ng-container>
+                </tbody>
+              </table>
+              
+        </div>
+    </div>
+</div>
