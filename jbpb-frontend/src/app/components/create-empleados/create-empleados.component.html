@@ -6,19 +6,22 @@
                     <h3>Add Employee</h3>
                     <form class="mt-4">
                         <div class="row">
-                            <div class="col">
-                                <input type="text" class="form-control form-control-lg" placeholder="Name">
+                            <div class="col-5">
+                                <input [(ngModel)]="empleado.firstName" name="firstName" type="text" class="form-control form-control-lg" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || event.charCode == 32)" placeholder="Name">
                             </div>
-                            <div class="col">
-                                <input type="text" class="form-control form-control-lg" placeholder="Last Name">
+                            <div class="col-5">
+                                <input [(ngModel)]="empleado.lastName" name="lastName" type="text" class="form-control form-control-lg" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || event.charCode == 32)" placeholder="Last Name">
+                            </div>
+                            <div class = "col-2">
+                                <input [(ngModel)]="empleado.employee_id" name="employee_id" type="number" inputmode="numeric" class="form-control form-control-lg" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" placeholder="Id" required>
                             </div>
                         </div>
-                        <input type="text" class="form-control form-control-lg mt-3" placeholder="Birthdate">
-                        <input type="text" class="form-control form-control-lg mt-3" placeholder="Notes">
+                        <input type="date" [(ngModel)]="empleado.birthDate" name="birthDate" class="form-control form-control-lg mt-3" placeholder="Birthdate">
+                        <input type="text" [(ngModel)]="empleado.notes" name="notes" class="form-control form-control-lg mt-3" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || event.charCode == 32)" placeholder="Notes">
 
                         <div class="mt-3">
                             <button type="text" class="btn btn-secondary btn-lg" style="margin-right: 10px;" routerLink="/list-employees">Go back</button>
-                            <button type="submit" class="btn btn-success btn-lg">Add</button>
+                            <button type="submit" (click)="save(empleado)" class="btn btn-success btn-lg">Add</button>
                         </div>
                     </form>
                 </div>

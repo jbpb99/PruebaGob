@@ -1,5 +1,6 @@
 package com.northwind.northwind.services.impl;
 
+import com.northwind.northwind.dto.EmployeeDto;
 import com.northwind.northwind.entities.Employee;
 import com.northwind.northwind.repositories.EmployeeRepository;
 import com.northwind.northwind.services.EmployeeDAO;
@@ -31,15 +32,23 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     //Delete
     @Override
     public Employee deleteById(int id) {
-        employeeRepository.changeActive(id);
+        employeeRepository.deleteEmpleadoById(id);
 
         return null;
     }
 
     //Post
     @Override
-    public List<Employee> saveAndFlush(Employee employee) {
-        employeeRepository.saveAndFlush(employee);
+    public Employee saveAndFlush(EmployeeDto employee) {
+        Employee employee1 = new Employee();
+
+        employee1.setEmployee_id(employee.getEmployee_id());
+        employee1.setFirstName(employee.getFirstName());
+        employee1.setLastName(employee.getLastName());
+        employee1.setBirthDate(employee.getBirthDate());
+        employee1.setNotes(employee.getNotes());
+
+        employeeRepository.saveAndFlush(employee1);
 
         return null;
     }

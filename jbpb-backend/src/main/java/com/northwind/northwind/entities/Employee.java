@@ -17,7 +17,6 @@ import java.util.List;
 @NoArgsConstructor
 public class Employee implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Employee_ID")
     private int employee_id;
 
@@ -33,10 +32,6 @@ public class Employee implements Serializable {
     @Column(name = "Notes")
     private String notes;
 
-    //List to bring the orders
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee", cascade = CascadeType.ALL)
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "employee"})
-    private List<Order> orders;
 
     public int getEmployee_id() {
         return employee_id;
@@ -76,14 +71,6 @@ public class Employee implements Serializable {
 
     public void setNotes(String notes) {
         this.notes = notes;
-    }
-
-    public List<Order> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
     }
 
 }

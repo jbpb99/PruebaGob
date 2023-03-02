@@ -1,5 +1,6 @@
 package com.northwind.northwind.services.impl;
 
+import com.northwind.northwind.dto.CustomerDto;
 import com.northwind.northwind.entities.Category;
 import com.northwind.northwind.entities.Customer;
 import com.northwind.northwind.repositories.CustomerRepository;
@@ -39,8 +40,19 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     //Post
     @Override
-    public List<Customer> saveAndFlush(Customer customer) {
-        customerRepository.saveAndFlush(customer);
+    public Customer saveAndFlush(CustomerDto customer) {
+        Customer customer1 = new Customer();
+
+        customer1.setCustomer_id(customer.getCustomer_id());
+        customer1.setCustomerName(customer.getCustomerName());
+        customer1.setContactName(customer.getContactName());
+        customer1.setAddress(customer.getAddress());
+        customer1.setPostalCode(customer.getPostalCode());
+        customer1.setCity(customer.getCity());
+        customer1.setCountry(customer.getCountry());
+
+
+        customerRepository.saveAndFlush(customer1);
 
         return null;
     }

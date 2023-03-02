@@ -13,6 +13,7 @@ import { ListCustomersComponent } from './components/list-customers/list-custome
 import { CreateCustomersComponent } from './components/create-customers/create-customers.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { EmpleadoService } from './services/empleado.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { EmpleadoService } from './services/empleado.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [EmpleadoService],
   bootstrap: [AppComponent]

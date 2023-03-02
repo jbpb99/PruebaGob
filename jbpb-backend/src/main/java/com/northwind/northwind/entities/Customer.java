@@ -14,7 +14,6 @@ import java.util.List;
 @NoArgsConstructor
 public class Customer {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_id", unique = true)
     private String customer_id;
 
@@ -37,10 +36,6 @@ public class Customer {
     private String country;
 
 
-    //List to get all the orders by customer
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer", cascade = CascadeType.ALL)
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "customer"})
-    private List<Order> orders;
 
     public String getCustomer_id() {
         return customer_id;
@@ -98,12 +93,5 @@ public class Customer {
         this.country = country;
     }
 
-    public List<Order> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
-    }
 
 }

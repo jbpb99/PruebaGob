@@ -16,4 +16,8 @@ export class CustomerService {
   public findAll(): Observable<Customers[]> {
     return this.http.get<Customers[]>(this.customerUrl+'get');
   }
+
+  save(customer: Customers) {
+    return this.http.post<Customers>(this.customerUrl+'post', customer)
+  }
 }

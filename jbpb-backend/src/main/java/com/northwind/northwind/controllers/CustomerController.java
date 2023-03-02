@@ -64,7 +64,7 @@ public class CustomerController {
     //Post
     @PostMapping
     @RequestMapping("/post")
-    public Customer saveCustomer(@RequestBody Customer customerBody) {
+    public CustomerDto saveCustomer(@RequestBody CustomerDto customerBody) {
         customerDAO.saveAndFlush(customerBody);
 
         return customerBody;

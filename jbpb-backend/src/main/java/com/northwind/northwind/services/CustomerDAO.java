@@ -1,5 +1,6 @@
 package com.northwind.northwind.services;
 
+import com.northwind.northwind.dto.CustomerDto;
 import com.northwind.northwind.entities.Category;
 import com.northwind.northwind.entities.Customer;
 
@@ -19,7 +20,7 @@ public interface CustomerDAO {
     Customer deleteById(int id);
 
     //New post
-    List<Customer> saveAndFlush(Customer customer);
+    Customer saveAndFlush(CustomerDto customer);
 
     //Update
     //Optional<Category> updateCategory(Category category, int id);

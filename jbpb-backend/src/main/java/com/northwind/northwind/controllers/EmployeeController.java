@@ -62,7 +62,7 @@ public class EmployeeController {
     //Post
     @PostMapping
     @RequestMapping("/post")
-    public Employee saveEmployee(@RequestBody Employee employeeBody) {
+    public EmployeeDto saveEmployee(@RequestBody EmployeeDto employeeBody) {
         employeeDAO.saveAndFlush(employeeBody);
 
         return employeeBody;

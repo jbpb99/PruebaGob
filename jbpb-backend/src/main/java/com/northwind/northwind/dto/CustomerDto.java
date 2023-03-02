@@ -7,8 +7,7 @@ import lombok.Setter;
 
 import java.io.Serializable;
 
-@Getter
-@Setter
+
 @Data
 public class CustomerDto implements Serializable {
     @JsonProperty("customer_id")
@@ -34,5 +33,33 @@ public class CustomerDto implements Serializable {
         this.city = city;
         this.postalCode = postalCode;
         this.country = country;
+    }
+
+    public String getCustomer_id() {
+        return customer_id;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public String getContactName() {
+        return contactName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public String getCountry() {
+        return country;
     }
 }

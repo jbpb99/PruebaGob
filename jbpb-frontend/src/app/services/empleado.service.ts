@@ -13,11 +13,11 @@ export class EmpleadoService {
     this.employeeUrl = 'http://localhost:8080/api/v1/employees/';
   }
 
-  public findAll(): Observable<Employees[]> {
+  findAll(): Observable<Employees[]> {
     return this.http.get<Employees[]>(this.employeeUrl+'get');
   }
 
-  public save(employee: Employees) {
-    return this.http.post<Employees>(this.employeeUrl, employee)
+  save(employee: Employees) {
+    return this.http.post<Employees>(this.employeeUrl+'post', employee)
   }
 }

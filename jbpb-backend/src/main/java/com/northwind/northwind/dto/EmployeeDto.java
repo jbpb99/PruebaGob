@@ -9,8 +9,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
+
 @Data
 public class EmployeeDto implements Serializable {
     @JsonProperty("employee_id")
@@ -30,5 +29,25 @@ public class EmployeeDto implements Serializable {
         this.firstName = firstName;
         this.birthDate = birthDate;
         this.notes = notes;
+    }
+
+    public int getEmployee_id() {
+        return employee_id;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public LocalDate getBirthDate() {
+        return birthDate;
+    }
+
+    public String getNotes() {
+        return notes;
     }
 }
