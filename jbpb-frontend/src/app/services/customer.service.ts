@@ -20,4 +20,16 @@ export class CustomerService {
   save(customer: Customers) {
     return this.http.post<Customers>(this.customerUrl+'post', customer)
   }
+
+  findById(id: String) {
+    return this.http.get<Customers>(this.customerUrl+'get/'+id);
+  }
+
+  updateCustomer(customer: Customers) {
+    return this.http.put<Customers>(this.customerUrl+"update/"+customer.customer_id, customer);
+  }
+
+  deleteCliente(customer: Customers) {
+    return this.http.delete<Customers>(this.customerUrl+"delete/"+customer.customer_id);
+  }
 }

@@ -72,7 +72,7 @@ public class CustomerController {
 
     //Delete
     @RequestMapping("/delete/{id}")
-    public Customer deleteCustomer(@PathVariable int id) {
+    public Customer deleteCustomer(@PathVariable String id) {
         customerDAO.deleteById(id);
 
         return null;
@@ -81,7 +81,7 @@ public class CustomerController {
     //Update
     @PutMapping
     @RequestMapping("/update/{id}")
-    public CustomerDto updateCustomer(@RequestBody Customer customerBody, @PathVariable int id) {
+    public CustomerDto updateCustomer(@RequestBody Customer customerBody, @PathVariable String id) {
         Optional<Customer> customer = customerDAO.updateCustomer(customerBody, id);
         CustomerDto customerDto;
 

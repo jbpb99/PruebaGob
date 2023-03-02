@@ -1,8 +1,13 @@
-i {
+#btn-editar {
     cursor: pointer;
+    border: none;
+    text-decoration: none;
+    background: none;
 }
 
-tbody div{
-    overflow:scroll;
-    height:204px;
+#btn-eliminar {
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    background: none;
 }

@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreateCustomersComponent } from './components/create-customers/create-customers.component';
 import { CreateEmpleadosComponent } from './components/create-empleados/create-empleados.component';
+import { EditCustomersComponent } from './components/edit-customers/edit-customers.component';
+import { EditEmpleadosComponent } from './components/edit-empleados/edit-empleados.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { ListCustomersComponent } from './components/list-customers/list-customers.component';
 import { ListEmpleadosComponent } from './components/list-empleados/list-empleados.component';
@@ -14,6 +16,8 @@ const routes: Routes = [
   { path: 'createEmployee', component: CreateEmpleadosComponent},
   { path: 'list-customers', component: ListCustomersComponent},
   { path: 'createCustomer', component: CreateCustomersComponent},
+  { path: 'edit-employee', component: EditEmpleadosComponent },
+  { path: 'edit-customer', component: EditCustomersComponent },
   //Redirect if the URL is not valid
   { path: '**', redirectTo: 'inicio', pathMatch: 'full'}
 ];

@@ -1,3 +1,13 @@
-i {
+#btn-editar {
     cursor: pointer;
+    border: none;
+    text-decoration: none;
+    background: none;
+}
+
+#btn-eliminar {
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    background: none;
 }

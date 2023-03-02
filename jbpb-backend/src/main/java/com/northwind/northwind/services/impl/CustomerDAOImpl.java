@@ -32,8 +32,8 @@ public class CustomerDAOImpl implements CustomerDAO {
 
 
     @Override
-    public Customer deleteById(int id) {
-        customerRepository.changeActive(id);
+    public Customer deleteById(String id) {
+        customerRepository.deleteClienteById(id);
 
         return null;
     }
@@ -59,7 +59,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     //Update
     @Override
-    public Optional<Customer> updateCustomer(Customer customer, int id) {
+    public Optional<Customer> updateCustomer(Customer customer, String id) {
         Optional<Customer> customers = customerRepository.findById(id);
         Customer customerobj;
 

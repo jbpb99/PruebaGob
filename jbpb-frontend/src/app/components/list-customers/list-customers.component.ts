@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Customers } from 'src/app/classes/customers/customers';
 import { CustomerService } from 'src/app/services/customer.service';
 
@@ -11,7 +12,7 @@ import { CustomerService } from 'src/app/services/customer.service';
 export class ListCustomersComponent implements OnInit {
   customers: Customers[] = [];
 
-  constructor(private customerService: CustomerService) { }
+  constructor(private customerService: CustomerService, private router: Router) { }
 
   ngOnInit()  {
     this.customerService.findAll().subscribe(
@@ -19,6 +20,22 @@ export class ListCustomersComponent implements OnInit {
       this.customers = data;
       }
     );
+  }
+
+  editar(customer: Customers) {
+    localStorage.setItem("id", customer.customer_id.toString());
+    this.router.navigate(["edit-customer"]);
+  }
+
+  deleteCliente(customer: Customers) {
+    if(confirm("¿Deseas eliminar al empleado: "+customer.customer_id+"- "+customer.contactName+"?")) {
+      this.customerService.deleteCliente(customer)
+      .subscribe(data=> {
+        this.customers = this.customers.filter(e=>e!==customer);
+        alert("Usuario "+customer.customer_id+" eliminado");
+      })
+    }
+    
   }
 
 }

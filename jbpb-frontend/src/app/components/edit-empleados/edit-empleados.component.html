@@ -1,0 +1,32 @@
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3>Modificar Empleado</h3>
+                    <form class="mt-4">
+                        <div class="row">
+                            <div class="col-5">
+                                <input [(ngModel)]="empleado.firstName" name="firstName" type="text" class="form-control form-control-lg" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || event.charCode == 32)" placeholder="Name">
+                            </div>
+                            <div class="col-5">
+                                <input [(ngModel)]="empleado.lastName" name="lastName" type="text" class="form-control form-control-lg" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || event.charCode == 32)" placeholder="Last Name">
+                            </div>
+                            <!--
+                            <div class = "col-2">
+                                <input [(ngModel)]="empleado.employee_id" name="employee_id" type="number" inputmode="numeric" class="form-control form-control-lg" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" placeholder="Id" required>
+                            </div>-->
+                        </div>
+                        <input type="date" [(ngModel)]="empleado.birthDate" name="birthDate" class="form-control form-control-lg mt-3" placeholder="Birthdate">
+                        <input type="text" [(ngModel)]="empleado.notes" name="notes" class="form-control form-control-lg mt-3" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || event.charCode == 32)" placeholder="Notes">
+
+                        <div class="mt-3">
+                            <button type="text" class="btn btn-secondary btn-lg" style="margin-right: 10px;" routerLink="/list-employees">Regresar</button>
+                            <button type="submit" (click)="update(empleado)" class="btn btn-success btn-lg">Actualizar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

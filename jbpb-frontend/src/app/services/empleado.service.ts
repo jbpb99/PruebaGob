@@ -18,6 +18,18 @@ export class EmpleadoService {
   }
 
   save(employee: Employees) {
-    return this.http.post<Employees>(this.employeeUrl+'post', employee)
+    return this.http.post<Employees>(this.employeeUrl+'post', employee);
+  }
+
+  findById(id: number) {
+    return this.http.get<Employees>(this.employeeUrl+'get/'+id);
+  }
+
+  updateEmpleado(empleado: Employees) {
+    return this.http.put<Employees>(this.employeeUrl+"update/"+empleado.employee_id, empleado);
+  }
+
+  deleteEmpleado(empleado: Employees) {
+    return this.http.delete<Employees>(this.employeeUrl+"delete/"+empleado.employee_id);
   }
 }

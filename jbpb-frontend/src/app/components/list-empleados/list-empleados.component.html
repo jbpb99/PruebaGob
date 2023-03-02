@@ -2,7 +2,7 @@
     <div class = "card">
         <div class = "card-body">
             <span class="h3">Listado de Empleados</span>
-            <button type="button" class="btn btn-dark btn-lg" style="float:right" routerLink="/createEmployee">Add Employee</button>
+            <button type="button" routerLink="/createEmployee" class="btn btn-dark btn-lg" style="float:right" routerLink="/createEmployee">Agregar Empleado</button>
             <table class="table table-striped mt-5">
                 <thead>
                   <tr>
@@ -22,8 +22,8 @@
                     <td>{{ employee.birthDate }}</td>
                     <td>{{ employee.notes }}</td>
                     <td>
-                        <i class="fas fa-edit fa-lg text-info" style="margin-right: 2px;"></i>
-                        <i class="fas fa-trash-alt fa-lg text-danger"></i>
+                        <button  class="fas fa-edit fa-lg text-info" (click)="editar(employee)" id="btn-editar" style="margin-right: 2px;"></button>
+                        <button class="fas fa-trash-alt fa-lg text-danger" (click)="deleteEmpleado(employee)" id="btn-eliminar"></button>
                     </td>
                   </tr>
                 </ng-container>

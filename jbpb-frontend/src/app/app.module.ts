@@ -14,6 +14,8 @@ import { CreateCustomersComponent } from './components/create-customers/create-c
 import { InicioComponent } from './components/inicio/inicio.component';
 import { EmpleadoService } from './services/empleado.service';
 import { FormsModule } from '@angular/forms';
+import { EditEmpleadosComponent } from './components/edit-empleados/edit-empleados.component';
+import { EditCustomersComponent } from './components/edit-customers/edit-customers.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     ListCustomersComponent,
     CreateCustomersComponent,
-    InicioComponent
+    InicioComponent,
+    EditEmpleadosComponent,
+    EditCustomersComponent
   ],
   imports: [
     BrowserModule,

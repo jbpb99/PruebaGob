@@ -17,7 +17,7 @@ public interface CustomerDAO {
     //List<Category> save(Category category);
 
     //Delete
-    Customer deleteById(int id);
+    Customer deleteById(String id);
 
     //New post
     Customer saveAndFlush(CustomerDto customer);
@@ -26,5 +26,5 @@ public interface CustomerDAO {
     //Optional<Category> updateCategory(Category category, int id);
 
     //Update
-    Optional<Customer> updateCustomer(Customer customer, int id);
+    Optional<Customer> updateCustomer(Customer customer, String id);
 }
